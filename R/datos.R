@@ -13,7 +13,7 @@ maxByYear <- function(Data){
   for( expert in seq_len(experts)){
     maxValuebyYear <- (max(Data[,,expert]))
     Data[,,expert] <- Data[,,expert]/maxValuebyYear
-    diag(Data[,,expert]) <- 1
+    #diag(Data[,,expert]) <- 1
   }
   return(Data)
 }
@@ -29,15 +29,35 @@ max_ByCountry <- function(Data){
   experts <- dim(Data)[3]
   countrys <- dim(Data)[2]
   for( expert in seq_len(experts)){
+    diag(Data[,,expert]) <- 0
     for(country in seq_len(countrys)){
       Data[country, ,expert] <- (Data[country, ,expert])/(sum(Data[country, ,expert]))
     }
-    diag(Data[,,expert]) <- 1
+    #diag(Data[,,expert]) <- 1
   }
   return(Data)
 }
 
 
+
+
+#' max_relativo
+#'
+#' @param Data
+#'
+#' @export
+max_relativo <- function(Data){
+  experts <- dim(Data)[3]
+  countrys <- dim(Data)[2]
+  for( expert in seq_len(experts)){
+    diag(Data[,,expert]) <- 0
+    for(country in seq_len(countrys)){
+      Data[country, ,expert] <- (Data[country, ,expert])/(max(Data[country, ,expert]))
+    }
+    #diag(Data[,,expert]) <- 1
+  }
+  return(Data)
+}
 
 
 

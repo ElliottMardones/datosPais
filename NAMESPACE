@@ -2,3 +2,5 @@
 
 export(maxByYear)
 export(max_ByCountry)
+export(max_relativo)
+export(myPlot)

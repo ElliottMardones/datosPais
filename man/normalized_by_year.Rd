@@ -14,6 +14,6 @@ normalized_by_year
 El archivo "normalized_by_year" contiene los datos normalizados entre [0,1]
 La normalizacion se realizo seleccionando un pais, se sumaron todas las columnas y se
 dividio cada elemento por el resultado de la suma. Se realizo este paso para cada
-fila.
+fila.IMPORTANTE: LA DIAGONAL NO ES 1
 }
 \keyword{normalized_by_year}

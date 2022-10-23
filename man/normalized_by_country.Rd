@@ -12,6 +12,6 @@ normalized_by_country
 }
 \description{
 El archivo "normalized_by_country" contiene los datos normalizados entre [0,1].
-La normalizacion se realizo dividiendo el maximo valor por año encontrado.
+La normalizacion se realizo dividiendo el maximo valor por año encontrado. IMPORTANTE: LA DIAGONAL NO ES 1
 }
 \keyword{normalized_by_country}
