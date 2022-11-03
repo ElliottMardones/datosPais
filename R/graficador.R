@@ -45,11 +45,11 @@ myPlot <- function(Data,type = c("Pr", "Bw"), vertex_size = 0.5, arrow_size = 0.
   }
   valores<-sort(unique(as.vector(AAadj)))
   #
-  valorespaleta <- valores
-  valorespaleta[1]<-0
+  valorespaleta <- 1- (1/exp(valores*2))
+  #valorespaleta[1]<-0
   #
-  paleta<- grey(rep(0,length(valores)),valorespaleta^10) #^color
-  paleta <- paleta[length(paleta):1]
+  paleta<- grey(rep(0,length(valores)),valorespaleta) #^color
+  #paleta <- paleta[length(paleta):1]
   vertex.size <- 0
   vertex.label.cex <- 0
   # que tipo de vertex.size usar, si page.rank o betweeneess
@@ -66,10 +66,11 @@ myPlot <- function(Data,type = c("Pr", "Bw"), vertex_size = 0.5, arrow_size = 0.
   }
   #return(igraph::cliques(myGraph, min = 3, max = 6))
   par(mar=c(0.5,0.5, 0.5, 0.5))
-  colfunc <- colorRampPalette(c("#e1e1fa","#040405"), space = "rgb")
+  colfunc <- colorRampPalette(c("white","black"))
   Newcolor <- colfunc(length(paleta))
   plot(myGraph,
-       edge.color = Newcolor[round(length(valores)*(E(myGraph)$weight))],
+       edge.color = paleta[round(length(valores)*(E(myGraph)$weight))],
+       #edge.color = Newcolor[round(length(valores)*(E(myGraph)$weight))],
        edge.curved=T,
        layout = layout(myGraph),
        vertex.size = vertex.size,
@@ -78,12 +79,13 @@ myPlot <- function(Data,type = c("Pr", "Bw"), vertex_size = 0.5, arrow_size = 0.
        vertex.label.family="sans",
        vertex.label.cex= vertex.label.cex,
        edge.arrow.size = arrow_size,
-       edge.width = edge_width
+       edge.width = edge_width- (1/exp(E(myGraph)$weight * 1.5))
   )
-  legend( x = "bottomright",
-          title = "Legend Title",
+  legend( x = "topleft",
+          title = "Continentes",
           legend = c("AFRICA", "AMERICA", "ASIA", "EUROPA", "OCEANIA" ),
           fill = c(AFRICA, AMERICA, ASIA, EUROPA, OCEANIA ),
           border = "white"
   )
+  return(igraph::cliques(myGraph, min = 3, max = 6))
 }
