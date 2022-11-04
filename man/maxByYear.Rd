@@ -7,7 +7,7 @@
 maxByYear(Data)
 }
 \arguments{
-\item{Data}{}
+\item{Data}{parametro}
 }
 \description{
 maxByYear

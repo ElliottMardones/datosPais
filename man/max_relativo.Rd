@@ -7,7 +7,7 @@
 max_relativo(Data)
 }
 \arguments{
-\item{Data}{}
+\item{Data}{parametro}
 }
 \description{
 max_relativo

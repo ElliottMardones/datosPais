@@ -7,7 +7,7 @@
 max_ByCountry(Data)
 }
 \arguments{
-\item{Data}{}
+\item{Data}{parametro}
 }
 \description{
 max_ByCountry

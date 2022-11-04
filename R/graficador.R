@@ -82,8 +82,8 @@ myPlot <- function(Data,type = c("Pr", "Bw"), vertex_size = 0.5, arrow_size = 0.
        edge.width = edge_width- (1/exp(E(myGraph)$weight * 1.5))
   )
   legend( x = "topleft",
-          title = "Continentes",
-          legend = c("AFRICA", "AMERICA", "ASIA", "EUROPA", "OCEANIA" ),
+          title = "Continents",
+          legend = c("Africa", "America", "Asia", "Europe", "Oceania" ),
           fill = c(AFRICA, AMERICA, ASIA, EUROPA, OCEANIA ),
           border = "white"
   )

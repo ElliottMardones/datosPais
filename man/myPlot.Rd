@@ -4,7 +4,14 @@
 \alias{myPlot}
 \title{myPlot}
 \usage{
-myPlot(Data, vertex_size = 0.5, arrow_size = 0.02, edge_width = 0.5)
+myPlot(
+  Data,
+  type = c("Pr", "Bw"),
+  vertex_size = 0.5,
+  arrow_size = 0.02,
+  edge_width = 0.5,
+  layout
+)
 }
 \arguments{
 \item{Data}{Data}

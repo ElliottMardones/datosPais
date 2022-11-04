@@ -5,7 +5,7 @@
 
 #' maxByYear
 #'
-#' @param Data
+#' @param Data parametro
 #'
 #' @export
 maxByYear <- function(Data){
@@ -22,7 +22,7 @@ maxByYear <- function(Data){
 
 #' max_ByCountry
 #'
-#' @param Data
+#' @param Data parametro
 #'
 #' @export
 max_ByCountry <- function(Data){
@@ -43,7 +43,7 @@ max_ByCountry <- function(Data){
 
 #' max_relativo
 #'
-#' @param Data
+#' @param Data parametro
 #'
 #' @export
 max_relativo <- function(Data){
